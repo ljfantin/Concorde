@@ -16,8 +16,8 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   s.default_subspecs = 'Core'
-
-  s.ios.deployment_target     = '8.0'
+  # ver si esto lo podemos setear por subspec
+  s.ios.deployment_target     = '7.0'
   s.ios.frameworks            = 'UIKit'
   s.osx.deployment_target     = '10.9'
 
