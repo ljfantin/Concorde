@@ -54,9 +54,10 @@ static const NSInteger kDefaultContentLength = 5*1024*1024;
 {
     if (self.connection!=nil)   {
         [self.connection cancel];
-        NSURLRequest * request = [[NSURLRequest alloc] initWithURL:url];
-        self.connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
     }
+    
+    NSURLRequest * request = [[NSURLRequest alloc] initWithURL:url];
+    self.connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
 }
 
 #pragma mark - NSURLConnectionDataDelegate

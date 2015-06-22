@@ -29,6 +29,14 @@ Pod::Spec.new do |s|
     core_spec.ios.source_files     = 'Code/CCBufferedImageView.swift'
   end
 
+  s.subspec 'CoreObjectiveC' do |core_spec|
+    core_spec.source_files         = 'Code/*.{h,m}', 'vendor/libjpeg-turbo/include/*'
+    core_spec.public_header_files  = 'Code/CCBufferedImageDecoder.h'
+    core_spec.vendored_libraries   = 'vendor/libjpeg-turbo/lib/libturbojpeg.a'
+
+    core_spec.ios.source_files     = 'Code/CCBufferedImageView.{h,m}'
+  end
+
   s.subspec 'Contentful' do |contentful_spec|
     contentful_spec.ios.source_files = 'Code/CCBufferedImageView+Contentful.swift'
 

@@ -29,9 +29,9 @@ CHECKOUT OPTIONS:
     :git: https://github.com/Quick/Quick.git
 
 SPEC CHECKSUMS:
-  FBSnapshotTestCase: e2914fbaabccea1dcc773d6a16b1c24540642488
+  FBSnapshotTestCase: 26f32d8fa9eb30e9f09712ecfb097808bc79b898
   Nimble: 1b3c765852d63b9540a91e528e1e4f8afab79b6f
-  Nimble-Snapshots: b2677e1b7f493eae6288cc8b71fceab4ffb496a5
+  Nimble-Snapshots: 727fb13569953b96247053978125c528ea8c492c
   Quick: 1bda8b4c8d43f6b4dd69ca001918b1767b3c9c93
 
-COCOAPODS: 0.36.0
+COCOAPODS: 0.37.2
