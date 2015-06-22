@@ -9,10 +9,14 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 
-@interface CCBufferedImageView : UIImageView 
+typedef void (^LoadedHandler)(void);
+
+@interface CCBufferedImageView : UIImageView
+
+@property (nonatomic, copy) LoadedHandler loadedHandler;
 
 - (id)initWithUrl:(NSURL*)url;
 
-- (void)loadFromUrl:(NSURL*)url;
+- (void)loadWithUrl:(NSURL*)url;
 
 @end
