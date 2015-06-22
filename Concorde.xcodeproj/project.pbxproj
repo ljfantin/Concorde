@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F3406F81B34A27600768214 /* CCBufferedImageView.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F3406F61B34A27600768214 /* CCBufferedImageView.h */; };
+		4F3406F91B34A27600768214 /* CCBufferedImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F3406F71B34A27600768214 /* CCBufferedImageView.m */; };
 		A1441E351AADD59100973761 /* Concorde.h in Headers */ = {isa = PBXBuildFile; fileRef = A1441E341AADD59100973761 /* Concorde.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A1441E3B1AADD59100973761 /* Concorde.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1441E2F1AADD59100973761 /* Concorde.framework */; };
 		A1441E421AADD59100973761 /* ConcordeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1441E411AADD59100973761 /* ConcordeTests.swift */; };
@@ -58,6 +60,8 @@
 /* Begin PBXFileReference section */
 		2AD1905452D3DF48A0334F20 /* Pods_ConcordeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ConcordeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		347B4509BA485E5DA43F0FD1 /* Pods-ConcordeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConcordeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ConcordeTests/Pods-ConcordeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4F3406F61B34A27600768214 /* CCBufferedImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCBufferedImageView.h; sourceTree = "<group>"; };
+		4F3406F71B34A27600768214 /* CCBufferedImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCBufferedImageView.m; sourceTree = "<group>"; };
 		A1441E2F1AADD59100973761 /* Concorde.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Concorde.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1441E331AADD59100973761 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A1441E341AADD59100973761 /* Concorde.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Concorde.h; sourceTree = "<group>"; };
@@ -146,6 +150,8 @@
 				A16BEE131AB046ED0089C2FE /* CCBufferedImageView.swift */,
 				A1441E341AADD59100973761 /* Concorde.h */,
 				A1441E331AADD59100973761 /* Info.plist */,
+				4F3406F61B34A27600768214 /* CCBufferedImageView.h */,
+				4F3406F71B34A27600768214 /* CCBufferedImageView.m */,
 			);
 			path = Code;
 			sourceTree = "<group>";
@@ -190,6 +196,7 @@
 			files = (
 				A1691EE01AAF008D00AADD22 /* CCBufferedImageDecoder.h in Headers */,
 				A1441E351AADD59100973761 /* Concorde.h in Headers */,
+				4F3406F81B34A27600768214 /* CCBufferedImageView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,6 +383,7 @@
 			files = (
 				A1691EE11AAF008D00AADD22 /* CCBufferedImageDecoder.m in Sources */,
 				A16BEE141AB046ED0089C2FE /* CCBufferedImageView.swift in Sources */,
+				4F3406F91B34A27600768214 /* CCBufferedImageView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -648,6 +656,7 @@
 				A16BEE0E1AB042A80089C2FE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
