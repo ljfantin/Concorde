@@ -27,7 +27,12 @@ static const NSInteger kDefaultContentLength = 5*1024*1024;
 
 - (id)initWithCoder:(NSCoder *)coder
 {
-    @throw [NSException exceptionWithName:NSInternalInconsistencyException reason:@"initWithCoder has not been implemented" userInfo:nil];
+    self = [super initWithCoder:coder];
+    if (self) {
+        self.backgroundColor = [UIColor grayColor];
+        self.queue = dispatch_queue_create("com.contentful.Concorde", DISPATCH_QUEUE_SERIAL);
+    }
+    return self;
 }
 
 - (id)initWithFrame:(CGRect)frame
@@ -39,7 +44,18 @@ static const NSInteger kDefaultContentLength = 5*1024*1024;
     }
     return self;
 }
+
 - (id)initWithUrl:(NSURL*)url
+{
+    return [self initWithUrl:url andHeaderParameters:nil];
+}
+
+- (void)laodWithUrl:(NSURL*)url
+{
+    [self loadWithUrl:url andHeaderParameters:nil];
+}
+
+- (id)initWithUrl:(NSURL*)url andHeaderParameters:(NSDictionary*)headerParameters
 {
     self = [super initWithImage:nil];
     if (self)   {
@@ -50,22 +66,22 @@ static const NSInteger kDefaultContentLength = 5*1024*1024;
     return self;
 }
 
-- (void)loadWithUrl:(NSURL*)url
+- (void)loadWithUrl:(NSURL*)url andHeaderParameters:(NSDictionary*)headerParameters
 {
     if (self.connection!=nil)   {
         [self.connection cancel];
     }
     
     NSURLRequest * request = [[NSURLRequest alloc] initWithURL:url];
+    if (headerParameters!=nil)  {
+        for (NSString * keyHeaderParameter in headerParameters) {
+            [request setValue:headerParameters[keyHeaderParameter] forKey:keyHeaderParameter];
+        }
+    }
     self.connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
 }
 
 #pragma mark - NSURLConnectionDataDelegate
-/*- (NSURLRequest *)connection:(NSURLConnection *)connection willSendRequest:(NSURLRequest *)request redirectResponse:(NSURLResponse *)response
-{
-
-}*/
-
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
 {
     NSInteger contentLength = response.expectedContentLength;

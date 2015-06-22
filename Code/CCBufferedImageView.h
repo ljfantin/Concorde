@@ -19,4 +19,8 @@ typedef void (^LoadedHandler)(void);
 
 - (void)loadWithUrl:(NSURL*)url;
 
+- (id)initWithUrl:(NSURL*)url andHeaderParameters:(NSDictionary*)headerParameters;
+
+- (void)loadWithUrl:(NSURL*)url andHeaderParameters:(NSDictionary*)headerParameters;
+
 @end
