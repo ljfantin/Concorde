@@ -50,7 +50,7 @@ static const NSInteger kDefaultContentLength = 5*1024*1024;
     return [self initWithUrl:url andHeaderParameters:nil];
 }
 
-- (void)laodWithUrl:(NSURL*)url
+- (void)loadWithUrl:(NSURL*)url
 {
     [self loadWithUrl:url andHeaderParameters:nil];
 }
