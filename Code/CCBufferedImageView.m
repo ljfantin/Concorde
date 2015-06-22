@@ -29,7 +29,7 @@ static const NSInteger kDefaultContentLength = 5*1024*1024;
 {
     self = [super initWithCoder:coder];
     if (self) {
-        self.backgroundColor = [UIColor grayColor];
+        self.backgroundColor = [UIColor whiteColor];
         self.queue = dispatch_queue_create("com.contentful.Concorde", DISPATCH_QUEUE_SERIAL);
     }
     return self;
@@ -39,7 +39,7 @@ static const NSInteger kDefaultContentLength = 5*1024*1024;
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundColor = [UIColor grayColor];
+        self.backgroundColor = [UIColor whiteColor];
         self.queue = dispatch_queue_create("com.contentful.Concorde", DISPATCH_QUEUE_SERIAL);
     }
     return self;
@@ -47,37 +47,22 @@ static const NSInteger kDefaultContentLength = 5*1024*1024;
 
 - (id)initWithUrl:(NSURL*)url
 {
-    return [self initWithUrl:url andHeaderParameters:nil];
-}
-
-- (void)loadWithUrl:(NSURL*)url
-{
-    [self loadWithUrl:url andHeaderParameters:nil];
-}
-
-- (id)initWithUrl:(NSURL*)url andHeaderParameters:(NSDictionary*)headerParameters
-{
     self = [super initWithImage:nil];
     if (self)   {
-        self.backgroundColor = [UIColor grayColor];
+        self.backgroundColor = [UIColor whiteColor];
         self.queue = dispatch_queue_create("com.contentful.Concorde", DISPATCH_QUEUE_SERIAL);
         [self loadWithUrl:url];
     }
     return self;
 }
 
-- (void)loadWithUrl:(NSURL*)url andHeaderParameters:(NSDictionary*)headerParameters
+- (void)loadWithUrl:(NSURL*)url
 {
     if (self.connection!=nil)   {
         [self.connection cancel];
     }
     
     NSURLRequest * request = [[NSURLRequest alloc] initWithURL:url];
-    if (headerParameters!=nil)  {
-        for (NSString * keyHeaderParameter in headerParameters) {
-            [request setValue:headerParameters[keyHeaderParameter] forKey:keyHeaderParameter];
-        }
-    }
     self.connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
 }
 
